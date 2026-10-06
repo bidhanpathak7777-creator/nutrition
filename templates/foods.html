@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ food }} | Know Your Nutrition</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='animations.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='instant-effects.css') }}">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body class="results-page">
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <a href="/" class="logo">
+                <span class="logo-symbol">🥗</span>
+                Know Your Nutrition
+            </a>
+
+
+            <div class="nav-links">
+
+                <a href="/">
+                    Home
+                </a>
+
+                <a href="/#nutrition">
+                    Nutrition
+                </a>
+
+                <a href="/#about">
+                    About
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- RESULTS -->
+
+    <main class="results-main">
+
+        <div class="results-container">
+
+
+            <a href="/" class="back-link">
+                ← Back to search
+            </a>
+
+
+
+            <!-- FOOD HEADER -->
+
+            <section class="result-header">
+
+                <div>
+
+                    <div class="result-label">
+                        NUTRITION FACTS
+                    </div>
+
+                    <h1>
+                        {{ food }}
+                    </h1>
+
+                    <p>
+                        Nutritional values per 100 grams
+                    </p>
+
+                </div>
+
+
+                <div class="result-food-icon">
+                    🍎
+                </div>
+
+            </section>
+
+
+
+            <!-- NUTRIENTS -->
+
+            <section class="result-grid">
+
+
+                <div class="result-card main-card">
+
+                    <div class="result-card-title">
+                        ENERGY
+                    </div>
+
+                    <div class="result-value">
+                        {{ calories if calories is not none else "—" }}
+
+                        <span>
+                            kcal
+                        </span>
+                    </div>
+
+                    <p>
+                        Energy provided by this food.
+                    </p>
+
+                </div>
+
+
+
+                <div class="result-card">
+
+                    <div class="result-card-title">
+                        PROTEIN
+                    </div>
+
+                    <div class="result-value">
+                        {{ protein if protein is not none else "—" }}
+
+                        <span>
+                            g
+                        </span>
+                    </div>
+
+                    <p>
+                        Supports growth and body repair.
+                    </p>
+
+                </div>
+
+
+
+                <div class="result-card">
+
+                    <div class="result-card-title">
+                        CARBOHYDRATES
+                    </div>
+
+                    <div class="result-value">
+                        {{ carbs if carbs is not none else "—" }}
+
+                        <span>
+                            g
+                        </span>
+                    </div>
+
+                    <p>
+                        An important source of dietary energy.
+                    </p>
+
+                </div>
+
+
+
+                <div class="result-card">
+
+                    <div class="result-card-title">
+                        FIBER
+                    </div>
+
+                    <div class="result-value">
+                        {{ fiber if fiber is not none else "—" }}
+
+                        <span>
+                            g
+                        </span>
+                    </div>
+
+                    <p>
+                        Supports healthy digestion.
+                    </p>
+
+                </div>
+
+
+
+                <div class="result-card">
+
+                    <div class="result-card-title">
+                        TOTAL FAT
+                    </div>
+
+                    <div class="result-value">
+                        {{ fat if fat is not none else "—" }}
+
+                        <span>
+                            g
+                        </span>
+                    </div>
+
+                    <p>
+                        Provides dietary energy and supports normal body functions.
+                    </p>
+
+                </div>
+
+
+
+                <div class="result-card">
+
+                    <div class="result-card-title">
+                        SUGAR
+                    </div>
+
+                    <div class="result-value">
+                        {{ sugar if sugar is not none else "—" }}
+
+                        <span>
+                            g
+                        </span>
+                    </div>
+
+                    <p>
+                        Total reported sugar content.
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- DATA INFORMATION -->
+
+            <section class="data-box">
+
+                <div class="data-check">
+                    ✓
+                </div>
+
+                <div>
+
+                    <h2>
+                        About this nutrition data
+                    </h2>
+
+                    <p>
+                        Nutrition information is retrieved from
+                        USDA FoodData Central. Values are provided
+                        per 100 grams and may vary depending on the
+                        food variety and preparation method.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <section class="search-again">
+
+                <h2>
+                    Want to check another food?
+                </h2>
+
+                <a href="/" class="search-again-button">
+                    Search another food →
+                </a>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div>
+
+                <strong>
+                    🥗 Know Your Nutrition
+                </strong>
+
+                <p>
+                    Know your food. Understand your body. Live healthier.
+                </p>
+
+            </div>
+
+
+            <div>
+                Nutrition data powered by
+                <strong>
+                    USDA FoodData Central
+                </strong>
+            </div>
+
+        </div>
+
+    </footer>
+
+ <script src="{{ url_for('static', filename='script.js') }}"></script>
+ <script src="{{ url_for('static', filename='enhanced-effects.js') }}"></script>
+</body>
+
+</html>

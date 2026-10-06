@@ -1,0 +1,315 @@
+/* ============================================================
+   INSTANT VISIBLE EFFECTS - You'll see these immediately!
+   ============================================================ */
+
+/* Rainbow pulsing logo */
+.logo-symbol {
+    animation: logo-rainbow 3s ease-in-out infinite, logo-bounce 2s ease-in-out infinite !important;
+}
+
+@keyframes logo-rainbow {
+    0%, 100% {
+        filter: hue-rotate(0deg) brightness(1);
+        transform: rotateY(0deg) scale(1);
+    }
+    50% {
+        filter: hue-rotate(180deg) brightness(1.3);
+        transform: rotateY(180deg) scale(1.1);
+    }
+}
+
+@keyframes logo-bounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-5px) scale(1.05); }
+}
+
+/* Glowing pulsing search box */
+.search-box {
+    animation: search-mega-glow 2s ease-in-out infinite !important;
+}
+
+@keyframes search-mega-glow {
+    0%, 100% {
+        box-shadow:
+            0 1px 0 #fff inset,
+            0 4px 0 #cfe6d4,
+            0 18px 36px rgba(28, 70, 40, 0.16);
+    }
+    50% {
+        box-shadow:
+            0 1px 0 #fff inset,
+            0 6px 0 #8cc152,
+            0 0 50px rgba(140, 193, 82, 0.8),
+            0 0 100px rgba(47, 158, 87, 0.4),
+            0 18px 36px rgba(28, 70, 40, 0.4);
+        transform: translateY(-2px) scale(1.01);
+    }
+}
+
+/* Animated floating foods - MORE DRAMATIC */
+.floating-food {
+    animation: mega-float 3s ease-in-out infinite, spin-slow 6s linear infinite !important;
+}
+
+@keyframes mega-float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+    50% {
+        transform: translateY(-30px) rotate(10deg) scale(1.2);
+    }
+}
+
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Nutrition preview card - subtle glow only (no rainbow border) */
+.nutrition-preview {
+    animation: card-subtle-glow 3s ease-in-out infinite !important;
+}
+
+@keyframes card-subtle-glow {
+    0%, 100% {
+        box-shadow:
+            0 1px 0 #fff inset,
+            -1px 1px 0 #cfe6d4,
+            -6px 8px 0 -2px #dcefe0,
+            -14px 24px 40px rgba(28, 70, 40, 0.18),
+            -30px 60px 80px rgba(28, 70, 40, 0.16);
+    }
+    50% {
+        box-shadow:
+            0 1px 0 #fff inset,
+            -1px 1px 0 #cfe6d4,
+            -6px 8px 0 -2px #dcefe0,
+            -14px 24px 40px rgba(28, 70, 40, 0.18),
+            -30px 60px 80px rgba(28, 70, 40, 0.16),
+            0 0 30px rgba(140, 193, 82, 0.15);
+    }
+}
+
+/* Popular links bounce continuously */
+.popular a {
+    animation: popular-bounce 2s ease-in-out infinite !important;
+    animation-delay: calc(var(--i, 0) * 0.2s);
+}
+
+@keyframes popular-bounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.1); }
+}
+
+/* Apply delays to popular links */
+.popular a:nth-of-type(1) { --i: 0; }
+.popular a:nth-of-type(2) { --i: 1; }
+.popular a:nth-of-type(3) { --i: 2; }
+.popular a:nth-of-type(4) { --i: 3; }
+.popular a:nth-of-type(5) { --i: 4; }
+
+/* Hero title word animation - VERY VISIBLE */
+.hero h1 {
+    animation: title-pulse 2s ease-in-out infinite !important;
+}
+
+@keyframes title-pulse {
+    0%, 100% {
+        transform: scale(1);
+        text-shadow: 0 2px 0 #fff, 0 14px 30px rgba(28, 70, 40, 0.14);
+    }
+    50% {
+        transform: scale(1.02);
+        text-shadow:
+            0 2px 0 #fff,
+            0 0 20px rgba(140, 193, 82, 0.6),
+            0 0 40px rgba(47, 158, 87, 0.4),
+            0 14px 30px rgba(28, 70, 40, 0.3);
+    }
+}
+
+/* Feature cards get rainbow glow */
+.feature-card {
+    animation: card-glow-pulse 3s ease-in-out infinite !important;
+    animation-delay: calc(var(--card-index, 0) * 0.3s);
+}
+
+@keyframes card-glow-pulse {
+    0%, 100% {
+        box-shadow: 0 1px 0 #fff inset, 0 2px 0 #e7efe9, 0 12px 24px rgba(28, 70, 40, 0.07);
+    }
+    50% {
+        box-shadow:
+            0 1px 0 #fff inset,
+            0 4px 0 #8cc152,
+            0 0 30px rgba(140, 193, 82, 0.5),
+            0 12px 24px rgba(28, 70, 40, 0.2);
+        transform: translateY(-5px) scale(1.02);
+    }
+}
+
+/* Navbar gets rainbow underline */
+.navbar {
+    border-bottom: 3px solid;
+    border-image: linear-gradient(90deg, #2f9e57, #8cc152, #d5a13c, #2f9e57) 1;
+    animation: navbar-shimmer 3s linear infinite !important;
+}
+
+@keyframes navbar-shimmer {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+/* Nav links get bounce effect */
+.nav-links a {
+    animation: nav-bounce 2s ease-in-out infinite !important;
+    animation-delay: calc(var(--nav-i, 0) * 0.2s);
+}
+
+@keyframes nav-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+.nav-links a:nth-child(1) { --nav-i: 0; }
+.nav-links a:nth-child(2) { --nav-i: 1; }
+.nav-links a:nth-child(3) { --nav-i: 2; }
+
+/* Footer gets gradient background */
+.footer {
+    background: linear-gradient(90deg, #fff, #e8f5eb, #fff) !important;
+    animation: footer-gradient 5s ease-in-out infinite !important;
+}
+
+@keyframes footer-gradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Result cards on results page */
+.result-card {
+    animation: result-glow 2s ease-in-out infinite !important;
+    animation-delay: calc(var(--result-i, 0) * 0.15s);
+}
+
+@keyframes result-glow {
+    0%, 100% {
+        box-shadow: 0 1px 0 #fff inset, 0 3px 0 #e2ede5, 0 14px 28px rgba(28, 70, 40, 0.08);
+    }
+    50% {
+        box-shadow:
+            0 1px 0 #fff inset,
+            0 5px 0 #8cc152,
+            0 0 30px rgba(140, 193, 82, 0.6),
+            0 14px 28px rgba(28, 70, 40, 0.2);
+        transform: translateY(-3px) scale(1.01);
+    }
+}
+
+/* Result header icon rotation */
+.result-food-icon {
+    animation: icon-spin-bounce 3s ease-in-out infinite !important;
+}
+
+@keyframes icon-spin-bounce {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+    25% {
+        transform: rotate(-10deg) scale(1.1);
+    }
+    50% {
+        transform: rotate(10deg) scale(1.2);
+    }
+    75% {
+        transform: rotate(-5deg) scale(1.1);
+    }
+}
+
+/* Data box pulsing effect */
+.data-box {
+    animation: data-box-pulse 2.5s ease-in-out infinite !important;
+}
+
+@keyframes data-box-pulse {
+    0%, 100% {
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08) inset, 0 5px 0 #0b1610, 0 28px 44px rgba(10, 30, 18, 0.35);
+    }
+    50% {
+        box-shadow:
+            0 1px 0 rgba(255, 255, 255, 0.08) inset,
+            0 7px 0 #0b1610,
+            0 0 40px rgba(140, 193, 82, 0.4),
+            0 28px 44px rgba(10, 30, 18, 0.5);
+        transform: scale(1.01);
+    }
+}
+
+/* Calorie number pulsing */
+.calorie-number {
+    animation: calorie-pulse 1.5s ease-in-out infinite !important;
+}
+
+@keyframes calorie-pulse {
+    0%, 100% {
+        transform: scale(1);
+        color: var(--ink);
+    }
+    50% {
+        transform: scale(1.05);
+        color: #2f9e57;
+        text-shadow: 0 0 20px rgba(47, 158, 87, 0.6);
+    }
+}
+
+/* Bar fills get shimmer */
+.bar-fill {
+    position: relative;
+    overflow: visible !important;
+    animation: bar-shimmer 2s linear infinite !important;
+}
+
+@keyframes bar-shimmer {
+    0% { filter: brightness(1) hue-rotate(0deg); }
+    50% { filter: brightness(1.3) hue-rotate(20deg); }
+    100% { filter: brightness(1) hue-rotate(0deg); }
+}
+
+/* Back link bounces */
+.back-link {
+    animation: back-bounce 1s ease-in-out infinite !important;
+}
+
+@keyframes back-bounce {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-5px); }
+}
+
+/* Search again button pulses */
+.search-again-button {
+    animation: button-mega-pulse 2s ease-in-out infinite !important;
+}
+
+@keyframes button-mega-pulse {
+    0%, 100% {
+        box-shadow: 0 4px 0 #1f7a41, 0 14px 22px rgba(47, 158, 87, 0.35);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow:
+            0 6px 0 #1f7a41,
+            0 0 30px rgba(140, 193, 82, 0.8),
+            0 14px 22px rgba(47, 158, 87, 0.5);
+        transform: scale(1.05);
+    }
+}
+
+/* Hero background animated gradient */
+.hero {
+    animation: hero-gradient-shift 10s ease-in-out infinite !important;
+}
+
+@keyframes hero-gradient-shift {
+    0%, 100% { filter: hue-rotate(0deg) brightness(1); }
+    50% { filter: hue-rotate(15deg) brightness(1.05); }
+}
