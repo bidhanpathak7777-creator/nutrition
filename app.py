@@ -26,9 +26,9 @@ def search():
 
     # Send a request to the USDA database
     response = requests.get(url, params={
-        "api_key": os.environ.get("mC3mgibzubLSlqou52hdYo4j9gdUIKq1gvnnWnXk"),
-git add .        "query": food,
-        "pageSize": 1
+      "api_key": os.environ.get("USDA_API_KEY"),
+      "query": food,
+      "pageSize": 1
     })
 
    
